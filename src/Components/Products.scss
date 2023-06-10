@@ -1,0 +1,44 @@
+.products {
+    .catImg {
+        width: 100%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: top center;
+            object-fit: cover;
+        }
+    }
+
+    .container {
+        display: flex;
+        gap: 50px;
+        margin: 50px auto;
+
+        .left {
+            flex: 1;
+            position: sticky;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            height: 100%;
+
+            h3 {
+                margin-bottom: 10px;
+            }
+
+            .inputItem {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+            }
+        }
+
+        .right {
+            flex: 3;
+        }
+    }
+}

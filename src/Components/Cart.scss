@@ -1,0 +1,94 @@
+.cart {
+  position: absolute;
+  top: 80px;
+  right: 35px;
+  width: 350px;
+  background: var(--white-color);
+  padding: 20px 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  z-index: 4;
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    img {
+      width: 100px;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+          color: var(--grey-color);
+        }
+
+        .price {
+          color: var(--secondary-color);
+        }
+      }
+
+      .delete {
+        color: #cc0000;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  .checkout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white-color);
+      background: var(--secondary-color);
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background: var(--additional-color);
+      }
+    }
+
+    span {
+      color: #cc0000;
+      transition: all 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

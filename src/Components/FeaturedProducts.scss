@@ -1,0 +1,25 @@
+.featuredProducts {
+  margin: 50px 0;
+
+  .container {
+    .top {
+      h2 {
+        font-size: clamp(1.15rem, 2vw, 1.8rem);
+        text-transform: capitalize;
+      }
+
+      p {
+        color: var(--grey-color);
+        text-align: justify;
+        margin: 10px 0 25px;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+  }
+}
