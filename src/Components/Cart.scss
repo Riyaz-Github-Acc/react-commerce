@@ -92,3 +92,12 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .cart {
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    width: 320px;
+  }
+}

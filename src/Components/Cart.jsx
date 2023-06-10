@@ -1,47 +1,45 @@
+import { useDispatch, useSelector } from "react-redux";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+
+import { removeItem, resetCart } from "../Redux/cartReducer";
 
 import "./Cart.scss";
 
 const Cart = () => {
-  const data = [
-    {
-      id: 2,
-      img: "/images/card/img-3.jpeg",
-      img2: "images/card/img-4.jpeg",
-      title: "Coat",
-      desc:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi.",
-      isNew: false,
-      oldPrice: 1000,
-      newPrice: 700,
-    },
+  const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
 
-    {
-      id: 3,
-      img: "/images/card/img-5.jpeg",
-      img2: "images/card/img-6.jpeg",
-      title: "T-Shirt",
-      isNew: true,
-      oldPrice: 250,
-      newPrice: 100,
-    },
-  ];
+  const totalPrice = () => {
+    let total = 0;
+    products.forEach((item) => {
+      total += item.quantity * item.price;
+    });
+    return total.toFixed(2);
+  };
 
   return (
     <div className="cart">
       <h3>Products in your cart</h3>
 
-      {data?.map((item) => (
+      {products?.map((item) => (
         <div className="item" key={item.id}>
-          <img src={item.img} alt="" />
+          <img
+            src={import.meta.env.VITE_STRAPI_UPLOAD_URL + item.image}
+            alt=""
+          />
 
           <div className="details">
             <div className="content">
               <h4>{item.title}</h4>
               <p>{item.desc?.substring(0, 50)}</p>
-              <div className="price">1 x ₹ {item.newPrice}</div>
+              <div className="price">
+                {item.quantity} x ₹ {item.price}
+              </div>
             </div>
-            <div className="delete">
+            <div
+              className="delete"
+              onClick={() => dispatch(removeItem(item.id))}
+            >
               <DeleteOutlineIcon />
             </div>
           </div>
@@ -50,12 +48,12 @@ const Cart = () => {
 
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>₹ 2,000</span>
+        <span>₹ {totalPrice()}</span>
       </div>
 
       <div className="checkout-btn">
         <button>PROCEED TO CHECKOUT</button>
-        <span>Reset</span>
+        <span onClick={() => dispatch(resetCart())}>Reset</span>
       </div>
     </div>
   );

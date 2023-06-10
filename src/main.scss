@@ -2,23 +2,23 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-color: #ef4e39;
-    --secondary-color: #008080;
-    --additional-color: #266376;
-    --white-color: #f1f1f1;
-    --black-color: #0b0b0b;
-    --grey-color: #565656;
-    --cart-counter-color: #235a89;
+  --primary-color: #ef4e39;
+  --secondary-color: #008080;
+  --additional-color: #266376;
+  --white-color: #f1f1f1;
+  --black-color: #0b0b0b;
+  --grey-color: #565656;
+  --cart-counter-color: #235a89;
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 h1,
@@ -27,21 +27,25 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Bruno Ace SC", cursive;
+  font-family: "Bruno Ace SC", cursive;
+}
+
+p {
+  font-size: clamp(0.9rem, 1vw, 1.15rem);
 }
 
 .container {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1200px) {
-    .container {
-        width: 96%;
-    }
+  .container {
+    width: 96%;
+  }
 }
 
 .link {
-    text-decoration: none;
-    color: var(--black-color);
+  text-decoration: none;
+  color: var(--black-color);
 }

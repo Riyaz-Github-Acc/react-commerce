@@ -1,24 +1,39 @@
 .offer {
-    width: 100%;
-    height: 600px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    background: url(/images/offer/couples.jpeg);
-    background-position: top -25px center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 50px 0;
-    padding-left: 200px;
+  width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background: url(/images/offer/couples.jpeg);
+  background-position: top -25px center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 50px 0;
+  padding-left: 200px;
+
+  .content {
+    h3 {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 3rem);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .offer > div {
+    flex: auto;
+  }
+
+  .offer {
+    display: flex;
+    padding-left: 50px;
 
     .content {
-        h3 {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: clamp(1.75rem, 3vw, 3rem);
-        }
+      flex: 3;
     }
+  }
 }

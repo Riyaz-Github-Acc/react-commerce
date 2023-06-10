@@ -26,10 +26,10 @@ const Category = () => {
       </div>
 
       <div className="col">
-        <div className="row">
+        <div className="row men-link">
           <img src="images/category/men.jpeg" alt="" />
           <button>
-            <Link className="link" to="/products/3">
+            <Link className="link " to="/products/3">
               Men
             </Link>
           </button>
